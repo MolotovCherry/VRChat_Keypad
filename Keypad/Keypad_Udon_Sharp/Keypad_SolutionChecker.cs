@@ -19,16 +19,25 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
         UdonBehaviour programDenied = (UdonBehaviour) settings.GetProgramVariable("programDenied");
         bool[] setActiveBools = (bool[]) settings.GetProgramVariable("grantedSetActiveObjects");
         bool changeActiveOnFail = (bool) settings.GetProgramVariable("changeActiveStatesOnFail");
+        string grantedText = (string) settings.GetProgramVariable("grantedText");
+        string deniedText = (string) settings.GetProgramVariable("deniedText");
 
         inputProgram.SendCustomEvent("resetInput");
 
         int plength = passcodes.Length;
 
+        // no code, just exit and reset display
+        if (string.IsNullOrEmpty(attemptedPasscode))
+        {
+            displayProgram.SendCustomEvent("resetDisplay");
+            return;
+        }
+
         for (int i = 0; i < plength; i++)
         {
             if (attemptedPasscode == passcodes[i])
             {
-                displayProgram.SetProgramVariable("text", "GRANTED");
+                displayProgram.SetProgramVariable("text", grantedText);
                 displayProgram.SendCustomEvent("printText");
 
                 int dlength = doorObjects.Length - 1;
@@ -95,6 +104,9 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                 // last iteration, no matches
                 if (i == (plength - 1))
                 {
+                    displayProgram.SetProgramVariable("text", deniedText);
+                    displayProgram.SendCustomEvent("printText");
+
                     if (programDenied != null)
                     {
                         // in the script, you can know which code was used to differentiate between multiple codes

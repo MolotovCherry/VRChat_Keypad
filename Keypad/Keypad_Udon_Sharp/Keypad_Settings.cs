@@ -7,6 +7,8 @@ using VRC.Udon;
 public class Keypad_Settings : UdonSharpBehaviour
 {
     public GameObject[] doorObjects;
+    public string grantedText = "GRANTED";
+    public string deniedText = "DENIED";
     public UdonBehaviour programGranted;
     public UdonBehaviour programDenied;
     public UdonBehaviour programClosed;
