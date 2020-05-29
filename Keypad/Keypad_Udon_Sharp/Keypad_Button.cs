@@ -13,17 +13,20 @@ public class Keypad_Button : UdonSharpBehaviour
 
     public override void Interact()
     {
-        bool isUserInVR = _playerLocal.IsUserInVR();
-        if (isUserInVR)
-        {
+        // these tests will block desktop input
+        // we can only use one method
+
+        //bool isUserInVR = _playerLocal.IsUserInVR();
+        //if (isUserInVR)
+        //{
             KeyPress();
-        }
+        //}
     }
 
-    public void OnMouseDown()
+    /*public void OnMouseDown()
     {
         KeyPress();
-    }
+    }*/
 
     private void KeyPress()
     {
