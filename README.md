@@ -1,12 +1,16 @@
 
 # VRChat Udon Keypad
 ![](https://github.com/cherryleafroad/VRChat_Keypad/blob/master/README_assets/keypad2.png)
-An advanced Udon keypad that can be used to create special passcodes on your world
+An advanced Udon keypad that can be used to create special passcodes on your world. Implemented using UdonSharp
 ## Features
 
  - Support for multiple passcodes
  - Can enable or disable gameobjects per passcode (advanced; see the `doorObjects` and`grantedSetActive` settings)
  - Can run an Udon program upon successful, denied, or logout event (pressing CLS button). Also passes the passcode used to the Udon program so that you can know how to react in your script
+
+## Requirements
+Udon Sharp - Make sure you install it before importing this project
+[https://github.com/Merlin-san/UdonSharp](https://github.com/Merlin-san/UdonSharp)
 
 ## Documentation
 
@@ -25,3 +29,7 @@ An advanced Udon keypad that can be used to create special passcodes on your wor
 - **Change active states on fail:** If a passcode is denied, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default)
 
 - **Change active states on logout:** When you press the CLS button, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default)
+
+### Credits
+Foorack for the original version (originally implemented using UdonGraph)
+[https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/](https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/)
