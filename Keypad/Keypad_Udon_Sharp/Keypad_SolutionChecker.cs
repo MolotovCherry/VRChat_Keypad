@@ -29,14 +29,20 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
         // no code, just exit and reset display
         if (string.IsNullOrEmpty(attemptedPasscode))
         {
+            Debug.Log("Keypad OK: Empty string, resetting...");
             displayProgram.SendCustomEvent("resetDisplay");
             return;
         }
 
+
+        bool codeGranted = false;
         for (int i = 0; i < plength; i++)
         {
             if (attemptedPasscode == passcodes[i])
             {
+                Debug.Log("Keypad code: " + attemptedPasscode + " success");
+                codeGranted = true;
+
                 displayProgram.SetProgramVariable("text", grantedText);
                 displayProgram.SendCustomEvent("printText");
 
@@ -50,11 +56,13 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                         // make sure active bool exists for this object
                         if ((setActiveBools.Length - 1) >= i)
                         {
+                            Debug.Log("Keypad granted: " + doorObjects[i].name + ".setActive(" + setActiveBools[i] + ")");
                             doorObjects[i].SetActive(setActiveBools[i]);
                         }
                         else
                         {
                             // default behavior
+                            Debug.Log("Keypad granted: " + doorObjects[i].name + ".setActive(false)");
                             doorObjects[i].SetActive(false);
                         }
                     }
@@ -69,51 +77,46 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
 
                 break;
             }
-            else
-            {
-                // last iteration, no matches, so reset display
-                if (i == (plength-1)) {
-                    displayProgram.SendCustomEvent("resetDisplay");
-                }
+        }
 
-                // whether to make changes to active state of object if passcode doesn't go through
-                // This can have the effect of disabling/enabling all non-successful active objects when we press OK
-                if (changeActiveOnFail)
+        // no matches at all
+        if (!codeGranted) {
+
+            Debug.Log("Keypad: code " + attemptedPasscode + " denied");
+
+            // whether to make changes to active state of all objects if passcode doesn't go through
+            // This can have the effect of disabling/enabling all active objects when we press OK
+            if (changeActiveOnFail)
+            {
+                for (int i = 0; i < doorObjects.Length; i++)
                 {
-                    int dlength = doorObjects.Length - 1;
-                    // make sure an object exists for this current interation, if not just ignore it
-                    if (dlength >= i)
+                    // not the settings obj, and not null! good!
+                    if ((doorObjects[i] != settingsObj) && (doorObjects[i] != null))
                     {
-                        // not the settings obj, and not null! good!
-                        if ((doorObjects[i] != settingsObj) && (doorObjects[i] != null))
+                        // make sure active bool exists for this object
+                        if ((setActiveBools.Length - 1) >= i)
                         {
-                            // make sure active bool exists for this object
-                            if ((setActiveBools.Length - 1) >= i)
-                            {
-                                doorObjects[i].SetActive(!setActiveBools[i]);
-                            }
-                            else
-                            {
-                                // default behavior
-                                doorObjects[i].SetActive(true);
-                            }
+                            Debug.Log("Keypad denied: " + doorObjects[i].name + ".setActive(" + !setActiveBools[i] + ")");
+                            doorObjects[i].SetActive(!setActiveBools[i]);
+                        }
+                        else
+                        {
+                            // default behavior
+                            Debug.Log("Keypad denied: " + doorObjects[i].name + ".setActive(true)");
+                            doorObjects[i].SetActive(true);
                         }
                     }
                 }
+            }
 
-                // last iteration, no matches
-                if (i == (plength - 1))
-                {
-                    displayProgram.SetProgramVariable("text", deniedText);
-                    displayProgram.SendCustomEvent("printText");
+            displayProgram.SetProgramVariable("text", deniedText);
+            displayProgram.SendCustomEvent("printText");
 
-                    if (programDenied != null)
-                    {
-                        // in the script, you can know which code was used to differentiate between multiple codes
-                        programDenied.SetProgramVariable("code", attemptedPasscode);
-                        programDenied.SendCustomEvent("keypadDenied");
-                    }
-                }
+            if (programDenied != null)
+            {
+                // in the script, you can know which code was used to differentiate between multiple codes
+                programDenied.SetProgramVariable("code", attemptedPasscode);
+                programDenied.SendCustomEvent("keypadDenied");
             }
         }
     }
@@ -139,11 +142,13 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                     // make sure active bool exists for this object
                     if ((setActiveBools.Length - 1) >= i)
                     {
+                        Debug.Log("Keypad logout: " + doorObjects[i].name + ".setActive(" + !setActiveBools[i] + ")");
                         doorObjects[i].SetActive(!setActiveBools[i]);
                     }
                     else
                     {
                         // default behavior
+                        Debug.Log("Keypad logout: " + doorObjects[i].name + ".setActive(true)");
                         doorObjects[i].SetActive(true);
                     }
                 }

@@ -14,26 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 1f59c0ee3be287b468b9acb850b0ed92,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export doorObjects\r\n    .export programGranted\r\n
-    \   .export programDenied\r\n    .export programClosed\r\n    .export passcodes\r\n
-    \   .export grantedSetActiveObjects\r\n    .export changeActiveStatesOnFail\r\n
-    \   .export changeActiveStatesOnLogout\r\n\r\n    __refl_const_intnl_udonTypeID:
-    %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
-    \   changeActiveStatesOnFail: %SystemBoolean, null\r\n    changeActiveStatesOnLogout:
-    %SystemBoolean, null\r\n    grantedSetActiveObjects: %SystemBooleanArray, null\r\n
-    \   doorObjects: %UnityEngineGameObjectArray, null\r\n    passcodes: %SystemStringArray,
-    null\r\n    programClosed: %VRCUdonUdonBehaviour, null\r\n    programDenied: %VRCUdonUdonBehaviour,
-    null\r\n    programGranted: %VRCUdonUdonBehaviour, null\r\n    __0_intnl_returnTarget_UInt32:
-    %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n
-    \       \r\n         # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
+  udonAssembly: ".data_start\r\n\r\n    .export doorObjects\r\n    .export grantedText\r\n
+    \   .export deniedText\r\n    .export programGranted\r\n    .export programDenied\r\n
+    \   .export programClosed\r\n    .export passcodes\r\n    .export grantedSetActiveObjects\r\n
+    \   .export changeActiveStatesOnFail\r\n    .export changeActiveStatesOnLogout\r\n\r\n
+    \   __refl_const_intnl_udonTypeID: %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName:
+    %SystemString, null\r\n    changeActiveStatesOnFail: %SystemBoolean, null\r\n
+    \   changeActiveStatesOnLogout: %SystemBoolean, null\r\n    grantedSetActiveObjects:
+    %SystemBooleanArray, null\r\n    doorObjects: %UnityEngineGameObjectArray, null\r\n
+    \   deniedText: %SystemString, null\r\n    grantedText: %SystemString, null\r\n
+    \   passcodes: %SystemStringArray, null\r\n    programClosed: %VRCUdonUdonBehaviour,
+    null\r\n    programDenied: %VRCUdonUdonBehaviour, null\r\n    programGranted:
+    %VRCUdonUdonBehaviour, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32,
+    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n        \r\n
+    \        # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
     \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
     Keypad_Settings : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
-    public GameObject[] doorObjects;\r\n        \r\n         # public UdonBehaviour
-    programGranted;\r\n        \r\n         # public UdonBehaviour programDenied;\r\n
-    \       \r\n         # public UdonBehaviour programClosed;\r\n        \r\n         #
-    public string[] passcodes = { \"2580\" };\r\n        \r\n         # public bool[]
-    grantedSetActiveObjects;\r\n        \r\n         # public bool changeActiveStatesOnFail;\r\n
-    \       \r\n         # public bool changeActiveStatesOnLogout;\r\n.code_end\r\n"
+    public GameObject[] doorObjects;\r\n        \r\n         # public string grantedText
+    = \"GRANTED\";\r\n        \r\n         # public string deniedText = \"DENIED\";\r\n
+    \       \r\n         # public UdonBehaviour programGranted;\r\n        \r\n         #
+    public UdonBehaviour programDenied;\r\n        \r\n         # public UdonBehaviour
+    programClosed;\r\n        \r\n         # public string[] passcodes = { \"2580\"
+    };\r\n        \r\n         # public bool[] grantedSetActiveObjects;\r\n        \r\n
+    \        # public bool changeActiveStatesOnFail;\r\n        \r\n         # public
+    bool changeActiveStatesOnLogout;\r\n.code_end\r\n"
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 7f498cd4eaf416d41ba8e48a8203ba4f, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
@@ -211,80 +215,73 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 182
-      endSourceChar: 217
+      endSourceChar: 219
       line: 9
+      lineChar: 11
+      spanCodeSection: "string grantedText = \"GRANTED\";\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 219
+      endSourceChar: 226
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 226
+      endSourceChar: 226
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 226
+      endSourceChar: 261
+      line: 10
+      lineChar: 11
+      spanCodeSection: "string deniedText = \"DENIED\";\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 261
+      endSourceChar: 268
+      line: 11
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 268
+      endSourceChar: 268
+      line: 11
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 268
+      endSourceChar: 303
+      line: 11
       lineChar: 11
       spanCodeSection: "UdonBehaviour programGranted;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 217
-      endSourceChar: 224
-      line: 10
-      lineChar: 4
-      spanCodeSection: 'public '
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 224
-      endSourceChar: 224
-      line: 10
-      lineChar: 11
-      spanCodeSection: 
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 224
-      endSourceChar: 258
-      line: 10
-      lineChar: 11
-      spanCodeSection: "UdonBehaviour programDenied;\r\n    "
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 258
-      endSourceChar: 265
-      line: 11
-      lineChar: 4
-      spanCodeSection: 'public '
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 265
-      endSourceChar: 265
-      line: 11
-      lineChar: 11
-      spanCodeSection: 
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 265
-      endSourceChar: 299
-      line: 11
-      lineChar: 11
-      spanCodeSection: "UdonBehaviour programClosed;\r\n    "
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 299
-      endSourceChar: 306
+      startSourceChar: 303
+      endSourceChar: 310
       line: 12
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 306
-      endSourceChar: 306
+      startSourceChar: 310
+      endSourceChar: 310
       line: 12
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 306
-      endSourceChar: 306
-      line: 12
-      lineChar: 11
-      spanCodeSection: 
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 306
+      startSourceChar: 310
       endSourceChar: 344
       line: 12
       lineChar: 11
-      spanCodeSection: "string[] passcodes = { \"2580\" };\r\n    "
+      spanCodeSection: "UdonBehaviour programDenied;\r\n    "
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 344
@@ -302,57 +299,106 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 351
-      endSourceChar: 351
+      endSourceChar: 385
       line: 13
+      lineChar: 11
+      spanCodeSection: "UdonBehaviour programClosed;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 385
+      endSourceChar: 392
+      line: 14
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 392
+      endSourceChar: 392
+      line: 14
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 351
-      endSourceChar: 388
-      line: 13
+      startSourceChar: 392
+      endSourceChar: 392
+      line: 14
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 392
+      endSourceChar: 430
+      line: 14
+      lineChar: 11
+      spanCodeSection: "string[] passcodes = { \"2580\" };\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 430
+      endSourceChar: 437
+      line: 15
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 437
+      endSourceChar: 437
+      line: 15
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 437
+      endSourceChar: 437
+      line: 15
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 437
+      endSourceChar: 474
+      line: 15
       lineChar: 11
       spanCodeSection: "bool[] grantedSetActiveObjects;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 388
-      endSourceChar: 395
-      line: 14
+      startSourceChar: 474
+      endSourceChar: 481
+      line: 16
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 395
-      endSourceChar: 395
-      line: 14
+      startSourceChar: 481
+      endSourceChar: 481
+      line: 16
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 395
-      endSourceChar: 431
-      line: 14
+      startSourceChar: 481
+      endSourceChar: 517
+      line: 16
       lineChar: 11
       spanCodeSection: "bool changeActiveStatesOnFail;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 431
-      endSourceChar: 438
-      line: 15
+      startSourceChar: 517
+      endSourceChar: 524
+      line: 17
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 438
-      endSourceChar: 438
-      line: 15
+      startSourceChar: 524
+      endSourceChar: 524
+      line: 17
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: 0
-      startSourceChar: 438
-      endSourceChar: 438
-      line: 15
+      startSourceChar: 524
+      endSourceChar: 524
+      line: 17
       lineChar: 11
       spanCodeSection: 
   hasInteractEvent: 0
@@ -378,7 +424,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 10
     - Name: 
       Entry: 7
       Data: 
@@ -447,7 +493,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: programGranted
+      Data: grantedText
     - Name: $v
       Entry: 7
       Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -459,7 +505,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: VRC.Udon.UdonBehaviour, VRC.Udon
+      Data: System.String, mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -471,13 +517,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: VRCUdonUdonBehaviour
+      Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: programGranted
+      Data: grantedText
     - Name: symbolUniqueName
       Entry: 1
-      Data: programGranted
+      Data: grantedText
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -510,7 +556,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: programDenied
+      Data: deniedText
     - Name: $v
       Entry: 7
       Data: 10|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -528,13 +574,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: VRCUdonUdonBehaviour
+      Data: SystemString
     - Name: symbolOriginalName
       Entry: 1
-      Data: programDenied
+      Data: deniedText
     - Name: symbolUniqueName
       Entry: 1
-      Data: programDenied
+      Data: deniedText
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -567,7 +613,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: programClosed
+      Data: programGranted
     - Name: $v
       Entry: 7
       Data: 13|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -575,8 +621,14 @@ MonoBehaviour:
       Entry: 7
       Data: 14|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 9
-      Data: 8
+      Entry: 7
+      Data: 15|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.Udon.UdonBehaviour, VRC.Udon
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -588,10 +640,10 @@ MonoBehaviour:
       Data: VRCUdonUdonBehaviour
     - Name: symbolOriginalName
       Entry: 1
-      Data: programClosed
+      Data: programGranted
     - Name: symbolUniqueName
       Entry: 1
-      Data: programClosed
+      Data: programGranted
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -600,7 +652,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 16|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -624,22 +676,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: passcodes
+      Data: programDenied
     - Name: $v
       Entry: 7
-      Data: 16|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 17|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 17|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 18|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 7
-      Data: 18|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.String[], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 15
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -648,13 +694,13 @@ MonoBehaviour:
       Data: 0
     - Name: symbolResolvedTypeName
       Entry: 1
-      Data: SystemStringArray
+      Data: VRCUdonUdonBehaviour
     - Name: symbolOriginalName
       Entry: 1
-      Data: passcodes
+      Data: programDenied
     - Name: symbolUniqueName
       Entry: 1
-      Data: passcodes
+      Data: programDenied
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
@@ -687,7 +733,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: grantedSetActiveObjects
+      Data: programClosed
     - Name: $v
       Entry: 7
       Data: 20|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -695,8 +741,128 @@ MonoBehaviour:
       Entry: 7
       Data: 21|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
+      Entry: 9
+      Data: 15
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCUdonUdonBehaviour
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: programClosed
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: programClosed
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
       Entry: 7
-      Data: 22|System.RuntimeType, mscorlib
+      Data: 22|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: passcodes
+    - Name: $v
+      Entry: 7
+      Data: 23|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 24|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 25|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.String[], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemStringArray
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: passcodes
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: passcodes
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: grantedSetActiveObjects
+    - Name: $v
+      Entry: 7
+      Data: 27|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 28|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 29|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.Boolean[], mscorlib
@@ -726,7 +892,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 30|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -753,13 +919,13 @@ MonoBehaviour:
       Data: changeActiveStatesOnFail
     - Name: $v
       Entry: 7
-      Data: 24|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 31|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 25|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 32|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 26|System.RuntimeType, mscorlib
+      Data: 33|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.Boolean, mscorlib
@@ -789,7 +955,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 34|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -816,13 +982,13 @@ MonoBehaviour:
       Data: changeActiveStatesOnLogout
     - Name: $v
       Entry: 7
-      Data: 28|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 35|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 29|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 36|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
-      Data: 26
+      Data: 33
     - Name: declarationType
       Entry: 3
       Data: 1
@@ -846,7 +1012,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 30|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 37|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0

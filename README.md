@@ -18,15 +18,18 @@ Udon Sharp - Make sure you install it before importing this project
  
  - **DoorObjects:** This allows you to enable or disable an object automatically when a passcode is granted, denied, or on logoff. Arrays are synced, meaning, the first passcode in the passcodes array corresponds to the first object in the doorobjects array.
  
- - **Program granted:** Run a program upon success of a code. It runs the `keypadGranted` custom event, and also passes the used code into your `code` variable.
+ - **Programs:**
  
- - **Program denied:** Run a program upon a denied code. It runs the `keypadDenied` custom event, and also passes the used code into your `code` variable.
- 
- - **Program closed:** Runs when CLS button was pressed. It executes the `keypadClosed` custom event.
+| Program        | CustomEvent   | ProgramVariableName(type) | Runs on                    |
+|----------------|---------------|---------------------------|------------------------------|
+| programGranted | keypadGranted | code(string)              | successful code   |
+| programDenied  | keypadDenied  | code(string)              | denied code       |
+| programClosed  | keypadClosed  |                           | pressing clear/CLS |
+
 
 - **Granted set active objects:** An array of booleans which says whether to enable or disable a particular object relating to the doorobjects array upon successful activation of a code. It is synced to the array again. E.g. array element 2 corresponds to array element 2 of doorobjects.
 
-- **Change active states on fail:** If a passcode is denied, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default). Also note that if a successful passcode happens after, only objects in the array up until the successful code will have activate states changed. (I can change this feature to ALWAYS do all objects regardless if anyone prefers. If you want, make a feature request)
+- **Change active states on fail:** If a passcode is denied, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default).
 
 - **Change active states on logout:** When you press the CLS button, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default)
 
