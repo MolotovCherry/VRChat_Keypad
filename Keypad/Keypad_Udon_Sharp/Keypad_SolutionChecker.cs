@@ -92,11 +92,15 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                     }
                 }
 
-                if (programDenied != null)
+                // last iteration, no matches
+                if (i == (plength - 1))
                 {
-                    // in the script, you can know which code was used to differentiate between multiple codes
-                    programDenied.SetProgramVariable("code", attemptedPasscode);
-                    programDenied.SendCustomEvent("keypadDenied");
+                    if (programDenied != null)
+                    {
+                        // in the script, you can know which code was used to differentiate between multiple codes
+                        programDenied.SetProgramVariable("code", attemptedPasscode);
+                        programDenied.SendCustomEvent("keypadDenied");
+                    }
                 }
             }
         }
