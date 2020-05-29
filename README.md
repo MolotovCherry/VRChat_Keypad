@@ -19,7 +19,8 @@ Udon Sharp - Make sure you install it before importing this project
  - **DoorObjects:** This allows you to enable or disable an object automatically when a passcode is granted, denied, or on logoff. Arrays are synced, meaning, the first passcode in the passcodes array corresponds to the first object in the doorobjects array.
  
  - **Programs**
- Enabling or disabling objects upon accepted code not advanced enough? You can enter your very own Udon program as a callback, and it also sends the used code, and you can program WHATEVER you want for a particular code!
+
+Enabling or disabling objects upon accepted code not advanced enough? You can enter your very own Udon program as a callback, and it also sends the used code, and you can program WHATEVER you want for a particular code!
  
 | Program        | CustomEvent   | ProgramVariableName(type) | Runs on                    |
 |----------------|---------------|---------------------------|------------------------------|
