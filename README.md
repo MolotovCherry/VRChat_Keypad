@@ -35,6 +35,8 @@ Udon Sharp - Make sure you install it before importing this project
 - **Change active states on logout:** When you press the CLS button, it will change the active states of all doorObjects to the OPPOSITE of the granted set active objects booleans. (Basically, it reverses the active state). Note: This will change the active state of all objects in the array (basically resetting them all to default)
 
 ### Credits
-Foorack for the original version (originally implemented using UdonGraph)
-
+Foorack for the original version (originally implemented using UdonGraph)  
 [https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/](https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/)
+
+### Enjoyed it?
+If you use it, it'd be nice if you gave credit to both me and Foorack for the work, although not explicitly required. It would also be nice to show us both your work. Have fun!
