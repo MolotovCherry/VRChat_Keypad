@@ -4,6 +4,7 @@
 An advanced Udon keypad that can be used to create special passcodes on your world. Implemented using UdonSharp
 ## Features
 
+ - Two keypad versions: One using objects, the other using canvas UI with buttons
  - Support for multiple passcodes
  - Can enable or disable gameobjects per passcode (advanced; see documentation and `doorObjects` and`grantedSetActive` settings)
  - Udon program callbacks: Enabling or disabling objects upon accepted code not advanced enough? You can enter your very own Udon program as a callback, and it also sends the used code, so you can program WHATEVER you want for a particular code!
