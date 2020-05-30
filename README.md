@@ -41,4 +41,4 @@ Foorack for the original version (originally implemented using UdonGraph)
 ### Enjoyed it?
 If you use it, it'd be nice if you gave credit to both me and Foorack for the work, although not explicitly required. It would also be nice to show us both your work. Have fun!
 
-You can find me on discord at: IndominableRexxx#2978
+You can find me on discord at: **IndominableRexxx#2978**
