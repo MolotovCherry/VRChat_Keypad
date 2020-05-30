@@ -1,4 +1,5 @@
 
+
 # VRChat Udon Keypad
 ![](https://github.com/cherryleafroad/VRChat_Keypad/blob/master/README_assets/keypad2.png)
 An advanced Udon keypad that can be used to create special passcodes on your world. Implemented using UdonSharp
@@ -41,4 +42,4 @@ Foorack for the original version (originally implemented using UdonGraph)
 ### Enjoyed it?
 If you use it, it'd be nice if you gave credit to both me and Foorack for the work, although not explicitly required. It would also be nice to show us both your work. Have fun!
 
-You can find me on discord at: **IndominableRexxx#2978**
+<img src="https://github.com/cherryleafroad/VRChat_Keypad/blob/master/README_assets/discord.jpg" height="80px" width="80px">My Discord: **IndominableRexxx#2978**
