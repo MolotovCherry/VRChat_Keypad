@@ -8,6 +8,7 @@ public class Keypad_InputHandler : UdonSharpBehaviour
 {
     public UdonBehaviour displayProgram;
     public UdonBehaviour checkerProgram;
+    [HideInInspector]
     public string inputKey;
     // initialize here because private strings are set to null
     // compared to public strings

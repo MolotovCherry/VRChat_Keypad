@@ -9,6 +9,7 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
     public UdonBehaviour settings;
     public UdonBehaviour inputProgram;
     public UdonBehaviour displayProgram;
+    [HideInInspector]
     public string attemptedPasscode;
 
     public void validatePasscode()

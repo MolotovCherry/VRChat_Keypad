@@ -8,6 +8,7 @@ using VRC.Udon.Wrapper.Modules;
 
 public class Keypad_Display : UdonSharpBehaviour
 {
+    [HideInInspector]
     public string text;
     public string defaultText = "PASSCODE";
     private int length;
