@@ -10,13 +10,16 @@ public class Keypad_Display : UdonSharpBehaviour
 {
     [HideInInspector]
     public string text;
-    public string defaultText = "PASSCODE";
+
+    public UdonBehaviour settings;
+    public string defaultText;
     private int length;
     private Text output;
 
     public void Start()
     {
         output = GetComponent<Text>();
+        defaultText = (string) settings.GetProgramVariable("displayText");
 
         resetDisplay();
     }
