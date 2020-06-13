@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class Keypad_Settings : UdonSharpBehaviour
 {
-    [Tooltip("A list of valid passcodes. Synced with the Door Objects and Granted Set Active Objects arrays")]
+    [Tooltip("A list of valid passcodes. Max 8 digits. Synced with the Door Objects and Granted Set Active Objects arrays")]
     public string[] passcodes = { "2580" };
 
     [Header("Object Control")]
