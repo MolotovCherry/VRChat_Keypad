@@ -12,17 +12,33 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
     [HideInInspector]
     public string attemptedPasscode;
 
+    private GameObject[] doorObjects;
+    private string[] passcodes;
+    private UdonBehaviour programGranted;
+    private UdonBehaviour programDenied;
+    private UdonBehaviour programClosed;
+    private bool[] setActiveBools;
+    private bool changeActiveStatesOnLogout;
+    private bool changeActiveOnFail;
+    private string grantedText;
+    private string deniedText;
+
+    public void Start()
+    {
+        doorObjects = (GameObject[]) settings.GetProgramVariable("doorObjects");
+        passcodes = (string[]) settings.GetProgramVariable("passcodes");
+        programGranted = (UdonBehaviour) settings.GetProgramVariable("programGranted");
+        programDenied = (UdonBehaviour) settings.GetProgramVariable("programDenied");
+        setActiveBools = (bool[]) settings.GetProgramVariable("grantedSetActiveObjects");
+        changeActiveOnFail = (bool) settings.GetProgramVariable("changeActiveStatesOnFail");
+        grantedText = (string) settings.GetProgramVariable("grantedText");
+        deniedText = (string) settings.GetProgramVariable("deniedText");
+        programClosed = (UdonBehaviour)settings.GetProgramVariable("programClosed");
+        changeActiveStatesOnLogout = (bool)settings.GetProgramVariable("changeActiveStatesOnLogout");
+    }
+
     public void validatePasscode()
     {
-        GameObject[] doorObjects = (GameObject[]) settings.GetProgramVariable("doorObjects");
-        string[] passcodes = (string[]) settings.GetProgramVariable("passcodes");
-        UdonBehaviour programGranted = (UdonBehaviour) settings.GetProgramVariable("programGranted");
-        UdonBehaviour programDenied = (UdonBehaviour) settings.GetProgramVariable("programDenied");
-        bool[] setActiveBools = (bool[]) settings.GetProgramVariable("grantedSetActiveObjects");
-        bool changeActiveOnFail = (bool) settings.GetProgramVariable("changeActiveStatesOnFail");
-        string grantedText = (string) settings.GetProgramVariable("grantedText");
-        string deniedText = (string) settings.GetProgramVariable("deniedText");
-
         inputProgram.SendCustomEvent("resetInput");
 
         int plength = passcodes.Length;
@@ -124,11 +140,6 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
 
     public void logout()
     {
-        GameObject[] doorObjects = (GameObject[]) settings.GetProgramVariable("doorObject");
-        UdonBehaviour programClosed = (UdonBehaviour) settings.GetProgramVariable("programClosed");
-        bool changeActiveStatesOnLogout = (bool) settings.GetProgramVariable("changeActiveStatesOnLogout");
-        bool[] setActiveBools = (bool[])settings.GetProgramVariable("grantedSetActiveObjects");
-
         displayProgram.SendCustomEvent("resetDisplay");
 
         // disable / enable all objects on logout
