@@ -35,13 +35,13 @@ MonoBehaviour:
     \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
     \       \r\n         # public class Keypad_InputHandler : UdonSharpBehaviour\r\n.code_start\r\n
     \       \r\n         # public UdonBehaviour displayProgram;\r\n        \r\n         #
-    public UdonBehaviour checkerProgram;\r\n        \r\n         # public string inputKey;\r\n
-    \       \r\n         # private string _dataBuffer = \"\";\r\n        \r\n         #
-    public void keyPressed()\r\n    .export keyPressed\r\n        \r\n    keyPressed:\r\n
-    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        \r\n         #
-    {\r\n        \r\n         # if (inputKey == \"OK\")\r\n        PUSH, inputKey\r\n
-    \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, __0_intnl_SystemBoolean\r\n
-    \       EXTERN, \"SystemString.__op_Equality__SystemString_SystemString__SystemBoolean\"\r\n
+    public UdonBehaviour checkerProgram;\r\n        \r\n         # [HideInInspector]\r\n
+    \       \r\n         # public string inputKey;\r\n        \r\n         # private
+    string _dataBuffer = \"\";\r\n        \r\n         # public void keyPressed()\r\n
+    \   .export keyPressed\r\n        \r\n    keyPressed:\r\n        \r\n        PUSH,
+    __0_const_intnl_SystemUInt32\r\n        \r\n         # {\r\n        \r\n         #
+    if (inputKey == \"OK\")\r\n        PUSH, inputKey\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemString.__op_Equality__SystemString_SystemString__SystemBoolean\"\r\n
     \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000078\r\n
     \       \r\n         # {\r\n        \r\n         # checkerProgram.SetProgramVariable(\"attemptedPasscode\",
     _dataBuffer);\r\n        PUSH, checkerProgram\r\n        PUSH, __1_const_intnl_SystemString\r\n
@@ -263,564 +263,578 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 225
-      endSourceChar: 232
+      endSourceChar: 226
       line: 10
       lineChar: 4
-      spanCodeSection: 'public '
+      spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 232
-      endSourceChar: 232
+      startSourceChar: 226
+      endSourceChar: 226
       line: 10
+      lineChar: 5
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 226
+      endSourceChar: 255
+      line: 10
+      lineChar: 5
+      spanCodeSection: "HideInInspector]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 255
+      endSourceChar: 255
+      line: 11
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 232
-      endSourceChar: 353
-      line: 10
+      startSourceChar: 255
+      endSourceChar: 376
+      line: 11
       lineChar: 11
       spanCodeSection: "string inputKey;\r\n    // initialize here because private
         strings are set to null\r\n    // compared to public strings\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 353
-      endSourceChar: 361
-      line: 13
+      startSourceChar: 376
+      endSourceChar: 384
+      line: 14
       lineChar: 4
       spanCodeSection: 'private '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 361
-      endSourceChar: 361
-      line: 13
+      startSourceChar: 384
+      endSourceChar: 384
+      line: 14
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 361
-      endSourceChar: 393
-      line: 13
+      startSourceChar: 384
+      endSourceChar: 416
+      line: 14
       lineChar: 12
       spanCodeSection: "string _dataBuffer = \"\";\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 7
-      startSourceChar: 393
-      endSourceChar: 423
-      line: 15
+      startSourceChar: 416
+      endSourceChar: 446
+      line: 16
       lineChar: 4
       spanCodeSection: "public void keyPressed()\r\n    "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 423
-      endSourceChar: 434
-      line: 16
+      startSourceChar: 446
+      endSourceChar: 457
+      line: 17
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 434
-      endSourceChar: 438
-      line: 17
+      startSourceChar: 457
+      endSourceChar: 461
+      line: 18
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 438
-      endSourceChar: 438
-      line: 17
+      startSourceChar: 461
+      endSourceChar: 461
+      line: 18
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 438
-      endSourceChar: 450
-      line: 17
+      startSourceChar: 461
+      endSourceChar: 473
+      line: 18
       lineChar: 12
       spanCodeSection: 'inputKey == '
     - startInstruction: 8
       endInstruction: 55
-      startSourceChar: 450
-      endSourceChar: 465
-      line: 17
+      startSourceChar: 473
+      endSourceChar: 488
+      line: 18
       lineChar: 24
       spanCodeSection: "\"OK\")\r\n        "
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 465
-      endSourceChar: 480
-      line: 18
+      startSourceChar: 488
+      endSourceChar: 503
+      line: 19
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 480
-      endSourceChar: 480
-      line: 19
+      startSourceChar: 503
+      endSourceChar: 503
+      line: 20
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 480
-      endSourceChar: 480
-      line: 19
+      startSourceChar: 503
+      endSourceChar: 503
+      line: 20
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 480
-      endSourceChar: 480
-      line: 19
+      startSourceChar: 503
+      endSourceChar: 503
+      line: 20
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 480
-      endSourceChar: 495
-      line: 19
+      startSourceChar: 503
+      endSourceChar: 518
+      line: 20
       lineChar: 12
       spanCodeSection: checkerProgram.
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 495
-      endSourceChar: 514
-      line: 19
+      startSourceChar: 518
+      endSourceChar: 537
+      line: 20
       lineChar: 27
       spanCodeSection: SetProgramVariable(
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 514
-      endSourceChar: 535
-      line: 19
+      startSourceChar: 537
+      endSourceChar: 558
+      line: 20
       lineChar: 46
       spanCodeSection: '"attemptedPasscode", '
     - startInstruction: 56
       endInstruction: 87
-      startSourceChar: 535
-      endSourceChar: 562
-      line: 19
+      startSourceChar: 558
+      endSourceChar: 585
+      line: 20
       lineChar: 67
       spanCodeSection: "_dataBuffer);\r\n            "
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 562
-      endSourceChar: 562
-      line: 20
+      startSourceChar: 585
+      endSourceChar: 585
+      line: 21
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 562
-      endSourceChar: 562
-      line: 20
+      startSourceChar: 585
+      endSourceChar: 585
+      line: 21
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 562
-      endSourceChar: 562
-      line: 20
+      startSourceChar: 585
+      endSourceChar: 585
+      line: 21
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 562
-      endSourceChar: 577
-      line: 20
+      startSourceChar: 585
+      endSourceChar: 600
+      line: 21
       lineChar: 12
       spanCodeSection: checkerProgram.
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 577
-      endSourceChar: 593
-      line: 20
+      startSourceChar: 600
+      endSourceChar: 616
+      line: 21
       lineChar: 27
       spanCodeSection: SendCustomEvent(
     - startInstruction: 88
       endInstruction: 119
-      startSourceChar: 593
-      endSourceChar: 634
-      line: 20
+      startSourceChar: 616
+      endSourceChar: 657
+      line: 21
       lineChar: 43
       spanCodeSection: "\"validatePasscode\");\r\n        }\r\n        "
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 634
-      endSourceChar: 639
-      line: 22
+      startSourceChar: 657
+      endSourceChar: 662
+      line: 23
       lineChar: 8
       spanCodeSection: 'else '
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 639
-      endSourceChar: 643
-      line: 22
+      startSourceChar: 662
+      endSourceChar: 666
+      line: 23
       lineChar: 13
       spanCodeSection: if (
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 643
-      endSourceChar: 643
-      line: 22
+      startSourceChar: 666
+      endSourceChar: 666
+      line: 23
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 643
-      endSourceChar: 655
-      line: 22
+      startSourceChar: 666
+      endSourceChar: 678
+      line: 23
       lineChar: 17
       spanCodeSection: 'inputKey == '
     - startInstruction: 120
       endInstruction: 167
-      startSourceChar: 655
-      endSourceChar: 671
-      line: 22
+      startSourceChar: 678
+      endSourceChar: 694
+      line: 23
       lineChar: 29
       spanCodeSection: "\"CLR\")\r\n        "
     - startInstruction: 168
       endInstruction: 167
-      startSourceChar: 671
-      endSourceChar: 686
-      line: 23
+      startSourceChar: 694
+      endSourceChar: 709
+      line: 24
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 168
       endInstruction: 167
-      startSourceChar: 686
-      endSourceChar: 686
-      line: 24
+      startSourceChar: 709
+      endSourceChar: 709
+      line: 25
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 168
       endInstruction: 167
-      startSourceChar: 686
-      endSourceChar: 686
-      line: 24
+      startSourceChar: 709
+      endSourceChar: 709
+      line: 25
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 168
       endInstruction: 183
-      startSourceChar: 686
-      endSourceChar: 713
-      line: 24
+      startSourceChar: 709
+      endSourceChar: 736
+      line: 25
       lineChar: 12
       spanCodeSection: "resetInput();\r\n            "
     - startInstruction: 184
       endInstruction: 183
-      startSourceChar: 713
-      endSourceChar: 713
-      line: 25
+      startSourceChar: 736
+      endSourceChar: 736
+      line: 26
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 184
       endInstruction: 183
-      startSourceChar: 713
-      endSourceChar: 713
-      line: 25
+      startSourceChar: 736
+      endSourceChar: 736
+      line: 26
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 184
       endInstruction: 183
-      startSourceChar: 713
-      endSourceChar: 713
-      line: 25
+      startSourceChar: 736
+      endSourceChar: 736
+      line: 26
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 184
       endInstruction: 183
-      startSourceChar: 713
-      endSourceChar: 728
-      line: 25
+      startSourceChar: 736
+      endSourceChar: 751
+      line: 26
       lineChar: 12
       spanCodeSection: checkerProgram.
     - startInstruction: 184
       endInstruction: 183
-      startSourceChar: 728
-      endSourceChar: 744
-      line: 25
+      startSourceChar: 751
+      endSourceChar: 767
+      line: 26
       lineChar: 27
       spanCodeSection: SendCustomEvent(
     - startInstruction: 184
       endInstruction: 215
-      startSourceChar: 744
-      endSourceChar: 816
-      line: 25
+      startSourceChar: 767
+      endSourceChar: 839
+      line: 26
       lineChar: 43
       spanCodeSection: "\"logout\");\r\n        }\r\n        // hard cap, only 8 digits
         long\r\n        "
     - startInstruction: 216
       endInstruction: 215
-      startSourceChar: 816
-      endSourceChar: 821
-      line: 28
+      startSourceChar: 839
+      endSourceChar: 844
+      line: 29
       lineChar: 8
       spanCodeSection: 'else '
     - startInstruction: 216
       endInstruction: 215
-      startSourceChar: 821
-      endSourceChar: 825
-      line: 28
+      startSourceChar: 844
+      endSourceChar: 848
+      line: 29
       lineChar: 13
       spanCodeSection: if (
     - startInstruction: 216
       endInstruction: 215
-      startSourceChar: 825
-      endSourceChar: 825
-      line: 28
+      startSourceChar: 848
+      endSourceChar: 848
+      line: 29
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 216
       endInstruction: 215
-      startSourceChar: 825
-      endSourceChar: 825
-      line: 28
+      startSourceChar: 848
+      endSourceChar: 848
+      line: 29
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 216
       endInstruction: 215
-      startSourceChar: 825
-      endSourceChar: 837
-      line: 28
+      startSourceChar: 848
+      endSourceChar: 860
+      line: 29
       lineChar: 17
       spanCodeSection: _dataBuffer.
     - startInstruction: 216
       endInstruction: 239
-      startSourceChar: 837
-      endSourceChar: 846
-      line: 28
+      startSourceChar: 860
+      endSourceChar: 869
+      line: 29
       lineChar: 29
       spanCodeSection: 'Length < '
     - startInstruction: 240
       endInstruction: 287
-      startSourceChar: 846
-      endSourceChar: 858
-      line: 28
+      startSourceChar: 869
+      endSourceChar: 881
+      line: 29
       lineChar: 38
       spanCodeSection: "8)\r\n        "
     - startInstruction: 288
       endInstruction: 287
-      startSourceChar: 858
-      endSourceChar: 873
-      line: 29
+      startSourceChar: 881
+      endSourceChar: 896
+      line: 30
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 288
       endInstruction: 287
-      startSourceChar: 873
-      endSourceChar: 873
-      line: 30
+      startSourceChar: 896
+      endSourceChar: 896
+      line: 31
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 288
       endInstruction: 287
-      startSourceChar: 873
-      endSourceChar: 873
-      line: 30
+      startSourceChar: 896
+      endSourceChar: 896
+      line: 31
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 288
       endInstruction: 287
-      startSourceChar: 873
-      endSourceChar: 888
-      line: 30
+      startSourceChar: 896
+      endSourceChar: 911
+      line: 31
       lineChar: 12
       spanCodeSection: '_dataBuffer += '
     - startInstruction: 288
       endInstruction: 363
-      startSourceChar: 888
-      endSourceChar: 911
-      line: 30
+      startSourceChar: 911
+      endSourceChar: 934
+      line: 31
       lineChar: 27
       spanCodeSection: "inputKey;\r\n            "
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 911
-      endSourceChar: 911
-      line: 31
+      startSourceChar: 934
+      endSourceChar: 934
+      line: 32
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 911
-      endSourceChar: 911
-      line: 31
+      startSourceChar: 934
+      endSourceChar: 934
+      line: 32
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 911
-      endSourceChar: 911
-      line: 31
+      startSourceChar: 934
+      endSourceChar: 934
+      line: 32
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 911
-      endSourceChar: 926
-      line: 31
+      startSourceChar: 934
+      endSourceChar: 949
+      line: 32
       lineChar: 12
       spanCodeSection: displayProgram.
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 926
-      endSourceChar: 945
-      line: 31
+      startSourceChar: 949
+      endSourceChar: 968
+      line: 32
       lineChar: 27
       spanCodeSection: SetProgramVariable(
     - startInstruction: 364
       endInstruction: 363
-      startSourceChar: 945
-      endSourceChar: 953
-      line: 31
+      startSourceChar: 968
+      endSourceChar: 976
+      line: 32
       lineChar: 46
       spanCodeSection: '"text", '
     - startInstruction: 364
       endInstruction: 395
-      startSourceChar: 953
-      endSourceChar: 980
-      line: 31
+      startSourceChar: 976
+      endSourceChar: 1003
+      line: 32
       lineChar: 54
       spanCodeSection: "_dataBuffer);\r\n            "
     - startInstruction: 396
       endInstruction: 395
-      startSourceChar: 980
-      endSourceChar: 980
-      line: 32
+      startSourceChar: 1003
+      endSourceChar: 1003
+      line: 33
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 396
       endInstruction: 395
-      startSourceChar: 980
-      endSourceChar: 980
-      line: 32
+      startSourceChar: 1003
+      endSourceChar: 1003
+      line: 33
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 396
       endInstruction: 395
-      startSourceChar: 980
-      endSourceChar: 980
-      line: 32
+      startSourceChar: 1003
+      endSourceChar: 1003
+      line: 33
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 396
       endInstruction: 395
-      startSourceChar: 980
-      endSourceChar: 995
-      line: 32
+      startSourceChar: 1003
+      endSourceChar: 1018
+      line: 33
       lineChar: 12
       spanCodeSection: displayProgram.
     - startInstruction: 396
       endInstruction: 395
-      startSourceChar: 995
-      endSourceChar: 1011
-      line: 32
+      startSourceChar: 1018
+      endSourceChar: 1034
+      line: 33
       lineChar: 27
       spanCodeSection: SendCustomEvent(
     - startInstruction: 396
       endInstruction: 427
-      startSourceChar: 1011
-      endSourceChar: 1049
-      line: 32
+      startSourceChar: 1034
+      endSourceChar: 1072
+      line: 33
       lineChar: 43
       spanCodeSection: "\"printPassword\");\r\n        }\r\n        "
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1049
-      endSourceChar: 1063
-      line: 34
+      startSourceChar: 1072
+      endSourceChar: 1086
+      line: 35
       lineChar: 8
       spanCodeSection: "else\r\n        "
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1063
-      endSourceChar: 1078
-      line: 35
+      startSourceChar: 1086
+      endSourceChar: 1101
+      line: 36
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1078
-      endSourceChar: 1078
-      line: 36
+      startSourceChar: 1101
+      endSourceChar: 1101
+      line: 37
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1078
-      endSourceChar: 1078
-      line: 36
+      startSourceChar: 1101
+      endSourceChar: 1101
+      line: 37
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1078
-      endSourceChar: 1078
-      line: 36
+      startSourceChar: 1101
+      endSourceChar: 1101
+      line: 37
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1078
-      endSourceChar: 1084
-      line: 36
+      startSourceChar: 1101
+      endSourceChar: 1107
+      line: 37
       lineChar: 12
       spanCodeSection: Debug.
     - startInstruction: 428
       endInstruction: 427
-      startSourceChar: 1084
-      endSourceChar: 1088
-      line: 36
+      startSourceChar: 1107
+      endSourceChar: 1111
+      line: 37
       lineChar: 18
       spanCodeSection: Log(
     - startInstruction: 428
       endInstruction: 463
-      startSourceChar: 1088
-      endSourceChar: 1142
-      line: 36
+      startSourceChar: 1111
+      endSourceChar: 1165
+      line: 37
       lineChar: 22
       spanCodeSection: "\"Limit reached!\");\r\n        }\r\n        \r\n    }\r\n\r\n
         \   "
     - startInstruction: 464
       endInstruction: 471
-      startSourceChar: 1142
-      endSourceChar: 1172
-      line: 41
+      startSourceChar: 1165
+      endSourceChar: 1195
+      line: 42
       lineChar: 4
       spanCodeSection: "public void resetInput()\r\n    "
     - startInstruction: 472
       endInstruction: 471
-      startSourceChar: 1172
-      endSourceChar: 1183
-      line: 42
+      startSourceChar: 1195
+      endSourceChar: 1206
+      line: 43
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 472
       endInstruction: 471
-      startSourceChar: 1183
-      endSourceChar: 1183
-      line: 43
+      startSourceChar: 1206
+      endSourceChar: 1206
+      line: 44
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 472
       endInstruction: 471
-      startSourceChar: 1183
-      endSourceChar: 1183
-      line: 43
+      startSourceChar: 1206
+      endSourceChar: 1206
+      line: 44
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 472
       endInstruction: 471
-      startSourceChar: 1183
-      endSourceChar: 1197
-      line: 43
+      startSourceChar: 1206
+      endSourceChar: 1220
+      line: 44
       lineChar: 8
       spanCodeSection: '_dataBuffer = '
     - startInstruction: 472
       endInstruction: 472
-      startSourceChar: 1197
-      endSourceChar: 1197
-      line: 43
+      startSourceChar: 1220
+      endSourceChar: 1220
+      line: 44
       lineChar: 22
       spanCodeSection: 
   hasInteractEvent: 0
@@ -1014,7 +1028,13 @@ MonoBehaviour:
       Data: 12|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 13|UnityEngine.HideInInspector, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1038,10 +1058,10 @@ MonoBehaviour:
       Data: _dataBuffer
     - Name: $v
       Entry: 7
-      Data: 13|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 14|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 14|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 15|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 9
       Data: 11
@@ -1068,7 +1088,7 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 16|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
