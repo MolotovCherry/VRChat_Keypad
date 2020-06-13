@@ -12,7 +12,7 @@ public class Keypad_Display : UdonSharpBehaviour
     public string text;
 
     public UdonBehaviour settings;
-    public string defaultText;
+    private string defaultText;
     private int length;
     private Text output;
 
