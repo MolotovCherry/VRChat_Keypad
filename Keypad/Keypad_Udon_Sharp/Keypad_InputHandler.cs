@@ -6,8 +6,8 @@ using VRC.Udon;
 
 public class Keypad_InputHandler : UdonSharpBehaviour
 {
-    public UdonBehaviour displayProgram;
-    public UdonBehaviour checkerProgram;
+    public Keypad_Display displayProgram;
+    public Keypad_SolutionChecker checkerProgram;
     [HideInInspector]
     public string inputKey;
     // initialize here because private strings are set to null
@@ -18,20 +18,20 @@ public class Keypad_InputHandler : UdonSharpBehaviour
     {
         if (inputKey == "OK")
         {
-            checkerProgram.SetProgramVariable("attemptedPasscode", _dataBuffer);
-            checkerProgram.SendCustomEvent("validatePasscode");
+            checkerProgram.attemptedPasscode = _dataBuffer;
+            checkerProgram.validatePasscode();
         }
         else if (inputKey == "CLR")
         {
             resetInput();
-            checkerProgram.SendCustomEvent("logout");
+            checkerProgram.logout();
         }
         // hard cap, only 8 digits long
         else if (_dataBuffer.Length < 8)
         {
             _dataBuffer += inputKey;
-            displayProgram.SetProgramVariable("text", _dataBuffer);
-            displayProgram.SendCustomEvent("printPassword");
+            displayProgram.text = _dataBuffer;
+            displayProgram.printPassword();
         }
         else
         {

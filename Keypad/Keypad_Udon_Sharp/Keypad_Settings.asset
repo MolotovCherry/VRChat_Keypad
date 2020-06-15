@@ -40,25 +40,25 @@ MonoBehaviour:
     \       \r\n         # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
     \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
     Keypad_Settings : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
-    [Tooltip(\"A list of valid passcodes. Synced with the Door Objects and Granted
-    Set Active Objects arrays\")]\r\n        \r\n         # public string[] passcodes
-    = { \"2580\" };\r\n        \r\n         # [Header(\"Object Control\")]\r\n        \r\n
-    \        # [Tooltip(\"GameObjects that you want enabled or disabled upon successful
-    code entered. Synced with Passcode and Granted Set Active Objects arrays\")]\r\n
-    \       \r\n         # public GameObject[] doorObjects;\r\n        \r\n         #
-    [Tooltip(\"Controls which Door Objects to enable or disable upon successful code.\")]\r\n
-    \       \r\n         # public bool[] grantedSetActiveObjects;\r\n        \r\n
-    \        # [Tooltip(\"If passcode is denied, sets all Door Objects to their default
-    active state (defined as the opposite of those listed in Granted Set Active Objects)\")]\r\n
-    \       \r\n         # public bool changeActiveStatesOnFail;\r\n        \r\n         #
-    [Tooltip(\"After pressing CLR, sets all Door objects to their default active state
-    (defined as the opposite of those listed in Granted Set Active Objects)\")]\r\n
-    \       \r\n         # public bool changeActiveStatesOnLogout;\r\n        \r\n
-    \        # [Header(\"Callback Programs\")]\r\n        \r\n         # [Tooltip(\"A
-    Udon program that will be run when user enters successful code. Sends the keypadGranted
-    custom event, and sets the code(string) variable\")]\r\n        \r\n         #
-    public UdonBehaviour programGranted;\r\n        \r\n         # [Tooltip(\"A Udon
-    program that will be run when user enters unsuccessful code. Sends the keypadDenied
+    [Tooltip(\"A list of valid passcodes. Max 8 digits. Synced with the Door Objects
+    and Granted Set Active Objects arrays\")]\r\n        \r\n         # public string[]
+    passcodes = { \"2580\" };\r\n        \r\n         # [Header(\"Object Control\")]\r\n
+    \       \r\n         # [Tooltip(\"GameObjects that you want enabled or disabled
+    upon successful code entered. Synced with Passcode and Granted Set Active Objects
+    arrays\")]\r\n        \r\n         # public GameObject[] doorObjects;\r\n        \r\n
+    \        # [Tooltip(\"Controls which Door Objects to enable or disable upon successful
+    code.\")]\r\n        \r\n         # public bool[] grantedSetActiveObjects;\r\n
+    \       \r\n         # [Tooltip(\"If passcode is denied, sets all Door Objects
+    to their default active state (defined as the opposite of those listed in Granted
+    Set Active Objects)\")]\r\n        \r\n         # public bool changeActiveStatesOnFail;\r\n
+    \       \r\n         # [Tooltip(\"After pressing CLR, sets all Door objects to
+    their default active state (defined as the opposite of those listed in Granted
+    Set Active Objects)\")]\r\n        \r\n         # public bool changeActiveStatesOnLogout;\r\n
+    \       \r\n         # [Header(\"Callback Programs\")]\r\n        \r\n         #
+    [Tooltip(\"A Udon program that will be run when user enters successful code. Sends
+    the keypadGranted custom event, and sets the code(string) variable\")]\r\n        \r\n
+    \        # public UdonBehaviour programGranted;\r\n        \r\n         # [Tooltip(\"A
+    Udon program that will be run when user enters unsuccessful code. Sends the keypadDenied
     custom event, and sets the code(string) variable\")]\r\n        \r\n         #
     public UdonBehaviour programDenied;\r\n        \r\n         # [Tooltip(\"A Udon
     program that will be run when user presses CLR button. Sends the keypadClosed
@@ -233,71 +233,71 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 146
-      endSourceChar: 256
+      endSourceChar: 270
       line: 8
       lineChar: 13
-      spanCodeSection: "\"A list of valid passcodes. Synced with the Door Objects
-        and Granted Set Active Objects arrays\")]\r\n    public "
+      spanCodeSection: "\"A list of valid passcodes. Max 8 digits. Synced with the
+        Door Objects and Granted Set Active Objects arrays\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 256
-      endSourceChar: 256
+      startSourceChar: 270
+      endSourceChar: 270
       line: 9
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 256
-      endSourceChar: 256
+      startSourceChar: 270
+      endSourceChar: 270
       line: 9
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 256
-      endSourceChar: 296
+      startSourceChar: 270
+      endSourceChar: 310
       line: 9
       lineChar: 11
       spanCodeSection: "string[] passcodes = { \"2580\" };\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 296
-      endSourceChar: 297
+      startSourceChar: 310
+      endSourceChar: 311
       line: 11
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 297
-      endSourceChar: 329
+      startSourceChar: 311
+      endSourceChar: 343
       line: 11
       lineChar: 5
       spanCodeSection: "Header(\"Object Control\")]\r\n    ["
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 329
-      endSourceChar: 329
+      startSourceChar: 343
+      endSourceChar: 343
       line: 12
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 329
-      endSourceChar: 337
+      startSourceChar: 343
+      endSourceChar: 351
       line: 12
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 337
-      endSourceChar: 337
+      startSourceChar: 351
+      endSourceChar: 351
       line: 12
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 337
-      endSourceChar: 488
+      startSourceChar: 351
+      endSourceChar: 502
       line: 12
       lineChar: 13
       spanCodeSection: "\"GameObjects that you want enabled or disabled upon successful
@@ -305,114 +305,114 @@ MonoBehaviour:
         \   public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 488
-      endSourceChar: 488
+      startSourceChar: 502
+      endSourceChar: 502
       line: 13
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 488
-      endSourceChar: 488
+      startSourceChar: 502
+      endSourceChar: 502
       line: 13
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 488
-      endSourceChar: 519
+      startSourceChar: 502
+      endSourceChar: 533
       line: 13
       lineChar: 11
       spanCodeSection: "GameObject[] doorObjects;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 519
-      endSourceChar: 520
+      startSourceChar: 533
+      endSourceChar: 534
       line: 14
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 520
-      endSourceChar: 520
+      startSourceChar: 534
+      endSourceChar: 534
       line: 14
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 520
-      endSourceChar: 528
+      startSourceChar: 534
+      endSourceChar: 542
       line: 14
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 528
-      endSourceChar: 528
+      startSourceChar: 542
+      endSourceChar: 542
       line: 14
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 528
-      endSourceChar: 615
+      startSourceChar: 542
+      endSourceChar: 629
       line: 14
       lineChar: 13
       spanCodeSection: "\"Controls which Door Objects to enable or disable upon successful
         code.\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 615
-      endSourceChar: 615
+      startSourceChar: 629
+      endSourceChar: 629
       line: 15
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 615
-      endSourceChar: 615
+      startSourceChar: 629
+      endSourceChar: 629
       line: 15
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 615
-      endSourceChar: 652
+      startSourceChar: 629
+      endSourceChar: 666
       line: 15
       lineChar: 11
       spanCodeSection: "bool[] grantedSetActiveObjects;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 652
-      endSourceChar: 653
+      startSourceChar: 666
+      endSourceChar: 667
       line: 16
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 653
-      endSourceChar: 653
+      startSourceChar: 667
+      endSourceChar: 667
       line: 16
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 653
-      endSourceChar: 661
+      startSourceChar: 667
+      endSourceChar: 675
       line: 16
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 661
-      endSourceChar: 661
+      startSourceChar: 675
+      endSourceChar: 675
       line: 16
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 661
-      endSourceChar: 824
+      startSourceChar: 675
+      endSourceChar: 838
       line: 16
       lineChar: 13
       spanCodeSection: "\"If passcode is denied, sets all Door Objects to their default
@@ -420,50 +420,50 @@ MonoBehaviour:
         Objects)\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 824
-      endSourceChar: 824
+      startSourceChar: 838
+      endSourceChar: 838
       line: 17
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 824
-      endSourceChar: 860
+      startSourceChar: 838
+      endSourceChar: 874
       line: 17
       lineChar: 11
       spanCodeSection: "bool changeActiveStatesOnFail;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 860
-      endSourceChar: 861
+      startSourceChar: 874
+      endSourceChar: 875
       line: 18
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 861
-      endSourceChar: 861
+      startSourceChar: 875
+      endSourceChar: 875
       line: 18
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 861
-      endSourceChar: 869
+      startSourceChar: 875
+      endSourceChar: 883
       line: 18
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 869
-      endSourceChar: 869
+      startSourceChar: 883
+      endSourceChar: 883
       line: 18
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 869
-      endSourceChar: 1029
+      startSourceChar: 883
+      endSourceChar: 1043
       line: 18
       lineChar: 13
       spanCodeSection: "\"After pressing CLR, sets all Door objects to their default
@@ -471,57 +471,57 @@ MonoBehaviour:
         Objects)\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1029
-      endSourceChar: 1029
+      startSourceChar: 1043
+      endSourceChar: 1043
       line: 19
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1029
-      endSourceChar: 1069
+      startSourceChar: 1043
+      endSourceChar: 1083
       line: 19
       lineChar: 11
       spanCodeSection: "bool changeActiveStatesOnLogout;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1069
-      endSourceChar: 1070
+      startSourceChar: 1083
+      endSourceChar: 1084
       line: 21
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1070
-      endSourceChar: 1105
+      startSourceChar: 1084
+      endSourceChar: 1119
       line: 21
       lineChar: 5
       spanCodeSection: "Header(\"Callback Programs\")]\r\n    ["
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1105
-      endSourceChar: 1105
+      startSourceChar: 1119
+      endSourceChar: 1119
       line: 22
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1105
-      endSourceChar: 1113
+      startSourceChar: 1119
+      endSourceChar: 1127
       line: 22
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1113
-      endSourceChar: 1113
+      startSourceChar: 1127
+      endSourceChar: 1127
       line: 22
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1113
-      endSourceChar: 1268
+      startSourceChar: 1127
+      endSourceChar: 1282
       line: 22
       lineChar: 13
       spanCodeSection: "\"A Udon program that will be run when user enters successful
@@ -529,50 +529,50 @@ MonoBehaviour:
         \   public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1268
-      endSourceChar: 1268
+      startSourceChar: 1282
+      endSourceChar: 1282
       line: 23
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1268
-      endSourceChar: 1303
+      startSourceChar: 1282
+      endSourceChar: 1317
       line: 23
       lineChar: 11
       spanCodeSection: "UdonBehaviour programGranted;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1303
-      endSourceChar: 1304
+      startSourceChar: 1317
+      endSourceChar: 1318
       line: 24
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1304
-      endSourceChar: 1304
+      startSourceChar: 1318
+      endSourceChar: 1318
       line: 24
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1304
-      endSourceChar: 1312
+      startSourceChar: 1318
+      endSourceChar: 1326
       line: 24
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1312
-      endSourceChar: 1312
+      startSourceChar: 1326
+      endSourceChar: 1326
       line: 24
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1312
-      endSourceChar: 1468
+      startSourceChar: 1326
+      endSourceChar: 1482
       line: 24
       lineChar: 13
       spanCodeSection: "\"A Udon program that will be run when user enters unsuccessful
@@ -580,221 +580,221 @@ MonoBehaviour:
         \   public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1468
-      endSourceChar: 1468
+      startSourceChar: 1482
+      endSourceChar: 1482
       line: 25
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1468
-      endSourceChar: 1502
+      startSourceChar: 1482
+      endSourceChar: 1516
       line: 25
       lineChar: 11
       spanCodeSection: "UdonBehaviour programDenied;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1502
-      endSourceChar: 1503
+      startSourceChar: 1516
+      endSourceChar: 1517
       line: 26
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1503
-      endSourceChar: 1503
+      startSourceChar: 1517
+      endSourceChar: 1517
       line: 26
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1503
-      endSourceChar: 1511
+      startSourceChar: 1517
+      endSourceChar: 1525
       line: 26
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1511
-      endSourceChar: 1511
+      startSourceChar: 1525
+      endSourceChar: 1525
       line: 26
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1511
-      endSourceChar: 1625
+      startSourceChar: 1525
+      endSourceChar: 1639
       line: 26
       lineChar: 13
       spanCodeSection: "\"A Udon program that will be run when user presses CLR button.
         Sends the keypadClosed custom event\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1625
-      endSourceChar: 1625
+      startSourceChar: 1639
+      endSourceChar: 1639
       line: 27
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1625
-      endSourceChar: 1661
+      startSourceChar: 1639
+      endSourceChar: 1675
       line: 27
       lineChar: 11
       spanCodeSection: "UdonBehaviour programClosed;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1661
-      endSourceChar: 1662
+      startSourceChar: 1675
+      endSourceChar: 1676
       line: 29
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1662
-      endSourceChar: 1695
+      startSourceChar: 1676
+      endSourceChar: 1709
       line: 29
       lineChar: 5
       spanCodeSection: "Header(\"Display Control\")]\r\n    ["
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1695
-      endSourceChar: 1695
+      startSourceChar: 1709
+      endSourceChar: 1709
       line: 30
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1695
-      endSourceChar: 1703
+      startSourceChar: 1709
+      endSourceChar: 1717
       line: 30
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1703
-      endSourceChar: 1703
+      startSourceChar: 1717
+      endSourceChar: 1717
       line: 30
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1703
-      endSourceChar: 1798
+      startSourceChar: 1717
+      endSourceChar: 1812
       line: 30
       lineChar: 13
       spanCodeSection: "\"The text that will be displayed on the keypad when user
         enters successful code\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1798
-      endSourceChar: 1798
+      startSourceChar: 1812
+      endSourceChar: 1812
       line: 31
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1798
-      endSourceChar: 1835
+      startSourceChar: 1812
+      endSourceChar: 1849
       line: 31
       lineChar: 11
       spanCodeSection: "string grantedText = \"GRANTED\";\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1835
-      endSourceChar: 1836
+      startSourceChar: 1849
+      endSourceChar: 1850
       line: 32
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1836
-      endSourceChar: 1836
+      startSourceChar: 1850
+      endSourceChar: 1850
       line: 32
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1836
-      endSourceChar: 1844
+      startSourceChar: 1850
+      endSourceChar: 1858
       line: 32
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1844
-      endSourceChar: 1844
+      startSourceChar: 1858
+      endSourceChar: 1858
       line: 32
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1844
-      endSourceChar: 1941
+      startSourceChar: 1858
+      endSourceChar: 1955
       line: 32
       lineChar: 13
       spanCodeSection: "\"The text that will be displayed on the keypad when user
         enters unsuccessful code\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1941
-      endSourceChar: 1941
+      startSourceChar: 1955
+      endSourceChar: 1955
       line: 33
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1941
-      endSourceChar: 1976
+      startSourceChar: 1955
+      endSourceChar: 1990
       line: 33
       lineChar: 11
       spanCodeSection: "string deniedText = \"DENIED\";\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1976
-      endSourceChar: 1977
+      startSourceChar: 1990
+      endSourceChar: 1991
       line: 34
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1977
-      endSourceChar: 1977
+      startSourceChar: 1991
+      endSourceChar: 1991
       line: 34
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1977
-      endSourceChar: 1985
+      startSourceChar: 1991
+      endSourceChar: 1999
       line: 34
       lineChar: 5
       spanCodeSection: Tooltip(
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1985
-      endSourceChar: 1985
+      startSourceChar: 1999
+      endSourceChar: 1999
       line: 34
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 1985
-      endSourceChar: 2033
+      startSourceChar: 1999
+      endSourceChar: 2047
       line: 34
       lineChar: 13
       spanCodeSection: "\"The default text on the display\")]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 2033
-      endSourceChar: 2033
+      startSourceChar: 2047
+      endSourceChar: 2047
       line: 35
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: 0
-      startSourceChar: 2033
-      endSourceChar: 2033
+      startSourceChar: 2047
+      endSourceChar: 2047
       line: 35
       lineChar: 11
       spanCodeSection: 
@@ -875,8 +875,8 @@ MonoBehaviour:
       Data: 6|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
     - Name: tooltip
       Entry: 1
-      Data: A list of valid passcodes. Synced with the Door Objects and Granted Set
-        Active Objects arrays
+      Data: A list of valid passcodes. Max 8 digits. Synced with the Door Objects
+        and Granted Set Active Objects arrays
     - Name: 
       Entry: 8
       Data: 

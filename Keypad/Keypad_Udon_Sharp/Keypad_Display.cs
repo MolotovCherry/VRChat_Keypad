@@ -11,7 +11,7 @@ public class Keypad_Display : UdonSharpBehaviour
     [HideInInspector]
     public string text;
 
-    public UdonBehaviour settings;
+    public Keypad_Settings settings;
     private string defaultText;
     private int length;
     private Text output;
@@ -19,7 +19,7 @@ public class Keypad_Display : UdonSharpBehaviour
     public void Start()
     {
         output = GetComponent<Text>();
-        defaultText = (string) settings.GetProgramVariable("displayText");
+        defaultText = settings.displayText;
 
         resetDisplay();
     }

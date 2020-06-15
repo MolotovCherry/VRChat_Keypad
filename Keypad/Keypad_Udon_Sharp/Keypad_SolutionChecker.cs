@@ -6,9 +6,9 @@ using VRC.Udon;
 public class Keypad_SolutionChecker : UdonSharpBehaviour
 {
     public GameObject settingsObj;
-    public UdonBehaviour settings;
-    public UdonBehaviour inputProgram;
-    public UdonBehaviour displayProgram;
+    public Keypad_Settings settings;
+    public Keypad_InputHandler inputProgram;
+    public Keypad_Display displayProgram;
     [HideInInspector]
     public string attemptedPasscode;
 
@@ -25,21 +25,21 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
 
     public void Start()
     {
-        doorObjects = (GameObject[]) settings.GetProgramVariable("doorObjects");
-        passcodes = (string[]) settings.GetProgramVariable("passcodes");
-        programGranted = (UdonBehaviour) settings.GetProgramVariable("programGranted");
-        programDenied = (UdonBehaviour) settings.GetProgramVariable("programDenied");
-        setActiveBools = (bool[]) settings.GetProgramVariable("grantedSetActiveObjects");
-        changeActiveOnFail = (bool) settings.GetProgramVariable("changeActiveStatesOnFail");
-        grantedText = (string) settings.GetProgramVariable("grantedText");
-        deniedText = (string) settings.GetProgramVariable("deniedText");
-        programClosed = (UdonBehaviour)settings.GetProgramVariable("programClosed");
-        changeActiveStatesOnLogout = (bool)settings.GetProgramVariable("changeActiveStatesOnLogout");
+        doorObjects = settings.doorObjects;
+        passcodes = settings.passcodes;
+        programGranted = settings.programGranted;
+        programDenied = settings.programDenied;
+        setActiveBools = settings.grantedSetActiveObjects;
+        changeActiveOnFail = settings.changeActiveStatesOnFail;
+        grantedText = settings.grantedText;
+        deniedText = settings.deniedText;
+        programClosed = settings.programClosed;
+        changeActiveStatesOnLogout = settings.changeActiveStatesOnLogout;
     }
 
     public void validatePasscode()
     {
-        inputProgram.SendCustomEvent("resetInput");
+        inputProgram.resetInput();
 
         int plength = passcodes.Length;
 
@@ -47,7 +47,7 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
         if (string.IsNullOrEmpty(attemptedPasscode))
         {
             Debug.Log("Keypad OK: Empty string, resetting...");
-            displayProgram.SendCustomEvent("resetDisplay");
+            displayProgram.resetDisplay();
             return;
         }
 
@@ -60,8 +60,8 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                 Debug.Log("Keypad code: " + attemptedPasscode + " success");
                 codeGranted = true;
 
-                displayProgram.SetProgramVariable("text", grantedText);
-                displayProgram.SendCustomEvent("printText");
+                displayProgram.text = grantedText;
+                displayProgram.printText();
 
                 int dlength = doorObjects.Length - 1;
                 // make sure an object exists for this current interation, if not just ignore it
@@ -126,8 +126,8 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
                 }
             }
 
-            displayProgram.SetProgramVariable("text", deniedText);
-            displayProgram.SendCustomEvent("printText");
+            displayProgram.text = deniedText;
+            displayProgram.printText();
 
             if (programDenied != null)
             {
@@ -140,7 +140,7 @@ public class Keypad_SolutionChecker : UdonSharpBehaviour
 
     public void logout()
     {
-        displayProgram.SendCustomEvent("resetDisplay");
+        displayProgram.resetDisplay();
 
         // disable / enable all objects on logout
         // actually, all it does is flip them opposite of their granted state

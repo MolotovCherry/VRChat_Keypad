@@ -25,19 +25,18 @@ MonoBehaviour:
     \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
     \       \r\n         # using VRC.Core;\r\n        \r\n         # public class
     Keypad_Button_VR : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
-    public string value = \"UNCONFIGURED_KEY\";\r\n        \r\n         # public UdonBehaviour
+    public string value = \"UNCONFIGURED_KEY\";\r\n        \r\n         # public Keypad_InputHandler
     targetProgram;\r\n        \r\n         # public override void Interact()\r\n    .export
     _interact\r\n        \r\n    _interact:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
     \       \r\n         # {\r\n        \r\n         # Debug.Log(\"KeyPressed VR:
     \" + value);\r\n        PUSH, __0_const_intnl_SystemString\r\n        PUSH, value\r\n
     \       PUSH, __0_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __0_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
-    \       \r\n         # targetProgram.SetProgramVariable(\"inputKey\", value);\r\n
-    \       PUSH, targetProgram\r\n        PUSH, __1_const_intnl_SystemString\r\n
-    \       PUSH, value\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
-    \       \r\n         # targetProgram.SendCustomEvent(\"keyPressed\");\r\n        PUSH,
-    targetProgram\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN,
-    \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
+    \       \r\n         # targetProgram.inputKey = value;\r\n        PUSH, targetProgram\r\n
+    \       PUSH, __1_const_intnl_SystemString\r\n        PUSH, value\r\n        EXTERN,
+    \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
+    \       \r\n         # targetProgram.keyPressed();\r\n        PUSH, targetProgram\r\n
+    \       PUSH, __2_const_intnl_SystemString\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32 #Function epilogue\r\n        COPY\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
   assemblyError: 
@@ -238,176 +237,163 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 209
-      endSourceChar: 245
+      endSourceChar: 251
       line: 10
       lineChar: 11
-      spanCodeSection: "UdonBehaviour targetProgram;\r\n\r\n    "
+      spanCodeSection: "Keypad_InputHandler targetProgram;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 7
-      startSourceChar: 245
-      endSourceChar: 282
+      startSourceChar: 251
+      endSourceChar: 288
       line: 12
       lineChar: 4
       spanCodeSection: "public override void Interact()\r\n    "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 282
-      endSourceChar: 293
+      startSourceChar: 288
+      endSourceChar: 299
       line: 13
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 293
-      endSourceChar: 293
-      line: 14
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 8
-      endInstruction: 7
-      startSourceChar: 293
-      endSourceChar: 293
-      line: 14
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 8
-      endInstruction: 7
-      startSourceChar: 293
-      endSourceChar: 293
-      line: 14
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 8
-      endInstruction: 7
-      startSourceChar: 293
+      startSourceChar: 299
       endSourceChar: 299
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 8
+      endInstruction: 7
+      startSourceChar: 299
+      endSourceChar: 299
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 8
+      endInstruction: 7
+      startSourceChar: 299
+      endSourceChar: 299
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 8
+      endInstruction: 7
+      startSourceChar: 299
+      endSourceChar: 305
       line: 14
       lineChar: 8
       spanCodeSection: Debug.
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 299
-      endSourceChar: 303
+      startSourceChar: 305
+      endSourceChar: 309
       line: 14
       lineChar: 14
       spanCodeSection: Log(
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 303
-      endSourceChar: 303
+      startSourceChar: 309
+      endSourceChar: 309
       line: 14
       lineChar: 18
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 303
-      endSourceChar: 323
+      startSourceChar: 309
+      endSourceChar: 329
       line: 14
       lineChar: 18
       spanCodeSection: '"KeyPressed VR: " + '
     - startInstruction: 8
       endInstruction: 55
-      startSourceChar: 323
-      endSourceChar: 342
+      startSourceChar: 329
+      endSourceChar: 348
       line: 14
       lineChar: 38
       spanCodeSection: "value);\r\n\r\n        "
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 342
-      endSourceChar: 342
+      startSourceChar: 348
+      endSourceChar: 348
       line: 16
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 342
-      endSourceChar: 342
+      startSourceChar: 348
+      endSourceChar: 348
       line: 16
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 342
-      endSourceChar: 342
+      startSourceChar: 348
+      endSourceChar: 348
       line: 16
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 342
-      endSourceChar: 356
+      startSourceChar: 348
+      endSourceChar: 362
       line: 16
       lineChar: 8
       spanCodeSection: targetProgram.
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 356
-      endSourceChar: 375
+      startSourceChar: 362
+      endSourceChar: 373
       line: 16
       lineChar: 22
-      spanCodeSection: SetProgramVariable(
-    - startInstruction: 56
-      endInstruction: 55
-      startSourceChar: 375
-      endSourceChar: 387
-      line: 16
-      lineChar: 41
-      spanCodeSection: '"inputKey", '
+      spanCodeSection: 'inputKey = '
     - startInstruction: 56
       endInstruction: 87
-      startSourceChar: 387
-      endSourceChar: 404
+      startSourceChar: 373
+      endSourceChar: 389
       line: 16
-      lineChar: 53
-      spanCodeSection: "value);\r\n        "
+      lineChar: 33
+      spanCodeSection: "value;\r\n        "
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 404
-      endSourceChar: 404
+      startSourceChar: 389
+      endSourceChar: 389
       line: 17
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 404
-      endSourceChar: 404
+      startSourceChar: 389
+      endSourceChar: 389
       line: 17
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 404
-      endSourceChar: 404
+      startSourceChar: 389
+      endSourceChar: 389
       line: 17
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 88
       endInstruction: 87
-      startSourceChar: 404
-      endSourceChar: 418
+      startSourceChar: 389
+      endSourceChar: 403
       line: 17
       lineChar: 8
       spanCodeSection: targetProgram.
-    - startInstruction: 88
-      endInstruction: 87
-      startSourceChar: 418
-      endSourceChar: 434
-      line: 17
-      lineChar: 22
-      spanCodeSection: SendCustomEvent(
     - startInstruction: 88
       endInstruction: 88
-      startSourceChar: 434
-      endSourceChar: 434
+      startSourceChar: 403
+      endSourceChar: 403
       line: 17
-      lineChar: 38
+      lineChar: 22
       spanCodeSection: 
   hasInteractEvent: 1
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11500000, guid: 19ad36701d9217647864c4cfc8a05273, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -507,7 +493,7 @@ MonoBehaviour:
       Data: 8|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: VRC.Udon.UdonBehaviour, VRC.Udon
+      Data: Keypad_InputHandler, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -545,8 +531,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: userBehaviourSource
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

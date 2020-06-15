@@ -35,7 +35,7 @@ MonoBehaviour:
     \       \r\n         # using UnityEngine.UI;\r\n        \r\n         # using VRC.Udon.Wrapper.Modules;\r\n
     \       \r\n         # public class Keypad_Display : UdonSharpBehaviour\r\n.code_start\r\n
     \       \r\n         # [HideInInspector]\r\n        \r\n         # public string
-    text;\r\n        \r\n         # public UdonBehaviour settings;\r\n        \r\n
+    text;\r\n        \r\n         # public Keypad_Settings settings;\r\n        \r\n
     \        # private string defaultText;\r\n        \r\n         # private int length;\r\n
     \       \r\n         # private Text output;\r\n        \r\n         # public void
     Start()\r\n    .export _start\r\n        \r\n    _start:\r\n        \r\n        PUSH,
@@ -43,9 +43,8 @@ MonoBehaviour:
     output = GetComponent<Text>();\r\n        PUSH, __0_this_intnl_Keypad_Display\r\n
     \       PUSH, __0_const_intnl_SystemType\r\n        PUSH, output\r\n        EXTERN,
     \"UnityEngineUIText.__GetComponent__T\"\r\n        \r\n         # defaultText
-    = (string) settings.GetProgramVariable(\"displayText\");\r\n        PUSH, settings\r\n
-    \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, __0_intnl_SystemObject\r\n
-    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    = settings.displayText;\r\n        PUSH, settings\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
     \       PUSH, __0_intnl_SystemObject\r\n        PUSH, __0_intnl_SystemString\r\n
     \       COPY\r\n        PUSH, __0_intnl_SystemString\r\n        PUSH, defaultText\r\n
     \       COPY\r\n        \r\n         # resetDisplay();\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n
@@ -355,393 +354,372 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 249
-      endSourceChar: 278
+      endSourceChar: 280
       line: 13
       lineChar: 11
-      spanCodeSection: "UdonBehaviour settings;\r\n    "
+      spanCodeSection: "Keypad_Settings settings;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 278
-      endSourceChar: 286
+      startSourceChar: 280
+      endSourceChar: 288
       line: 14
       lineChar: 4
       spanCodeSection: 'private '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 286
-      endSourceChar: 286
+      startSourceChar: 288
+      endSourceChar: 288
       line: 14
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 286
-      endSourceChar: 311
+      startSourceChar: 288
+      endSourceChar: 313
       line: 14
       lineChar: 12
       spanCodeSection: "string defaultText;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 311
-      endSourceChar: 319
+      startSourceChar: 313
+      endSourceChar: 321
       line: 15
       lineChar: 4
       spanCodeSection: 'private '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 319
-      endSourceChar: 319
+      startSourceChar: 321
+      endSourceChar: 321
       line: 15
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 319
-      endSourceChar: 336
+      startSourceChar: 321
+      endSourceChar: 338
       line: 15
       lineChar: 12
       spanCodeSection: "int length;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 336
-      endSourceChar: 344
+      startSourceChar: 338
+      endSourceChar: 346
       line: 16
       lineChar: 4
       spanCodeSection: 'private '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 344
-      endSourceChar: 344
+      startSourceChar: 346
+      endSourceChar: 346
       line: 16
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 344
-      endSourceChar: 364
+      startSourceChar: 346
+      endSourceChar: 366
       line: 16
       lineChar: 12
       spanCodeSection: "Text output;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 7
-      startSourceChar: 364
-      endSourceChar: 389
+      startSourceChar: 366
+      endSourceChar: 391
       line: 18
       lineChar: 4
       spanCodeSection: "public void Start()\r\n    "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 389
-      endSourceChar: 400
+      startSourceChar: 391
+      endSourceChar: 402
       line: 19
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 400
-      endSourceChar: 400
+      startSourceChar: 402
+      endSourceChar: 402
       line: 20
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 400
-      endSourceChar: 400
+      startSourceChar: 402
+      endSourceChar: 402
       line: 20
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 400
-      endSourceChar: 409
+      startSourceChar: 402
+      endSourceChar: 411
       line: 20
       lineChar: 8
       spanCodeSection: 'output = '
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 409
-      endSourceChar: 409
+      startSourceChar: 411
+      endSourceChar: 411
       line: 20
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 409
-      endSourceChar: 421
+      startSourceChar: 411
+      endSourceChar: 423
       line: 20
       lineChar: 17
       spanCodeSection: GetComponent
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 421
-      endSourceChar: 422
+      startSourceChar: 423
+      endSourceChar: 424
       line: 20
       lineChar: 29
       spanCodeSection: <
     - startInstruction: 8
       endInstruction: 39
-      startSourceChar: 422
-      endSourceChar: 440
+      startSourceChar: 424
+      endSourceChar: 442
       line: 20
       lineChar: 30
       spanCodeSection: "Text>();\r\n        "
     - startInstruction: 40
       endInstruction: 39
-      startSourceChar: 440
-      endSourceChar: 440
+      startSourceChar: 442
+      endSourceChar: 442
       line: 21
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 40
       endInstruction: 39
-      startSourceChar: 440
-      endSourceChar: 440
+      startSourceChar: 442
+      endSourceChar: 442
       line: 21
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 40
       endInstruction: 39
-      startSourceChar: 440
-      endSourceChar: 454
+      startSourceChar: 442
+      endSourceChar: 456
       line: 21
       lineChar: 8
       spanCodeSection: 'defaultText = '
     - startInstruction: 40
       endInstruction: 39
-      startSourceChar: 454
-      endSourceChar: 463
+      startSourceChar: 456
+      endSourceChar: 456
       line: 21
       lineChar: 22
-      spanCodeSection: '(string) '
-    - startInstruction: 40
-      endInstruction: 39
-      startSourceChar: 463
-      endSourceChar: 463
-      line: 21
-      lineChar: 31
       spanCodeSection: 
     - startInstruction: 40
       endInstruction: 39
-      startSourceChar: 463
-      endSourceChar: 463
+      startSourceChar: 456
+      endSourceChar: 465
       line: 21
-      lineChar: 31
-      spanCodeSection: 
-    - startInstruction: 40
-      endInstruction: 39
-      startSourceChar: 463
-      endSourceChar: 472
-      line: 21
-      lineChar: 31
+      lineChar: 22
       spanCodeSection: settings.
     - startInstruction: 40
-      endInstruction: 39
-      startSourceChar: 472
-      endSourceChar: 491
-      line: 21
-      lineChar: 40
-      spanCodeSection: GetProgramVariable(
-    - startInstruction: 40
       endInstruction: 111
-      startSourceChar: 491
-      endSourceChar: 518
+      startSourceChar: 465
+      endSourceChar: 489
       line: 21
-      lineChar: 59
-      spanCodeSection: "\"displayText\");\r\n\r\n        "
+      lineChar: 31
+      spanCodeSection: "displayText;\r\n\r\n        "
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 518
-      endSourceChar: 518
+      startSourceChar: 489
+      endSourceChar: 489
       line: 23
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 518
-      endSourceChar: 518
+      startSourceChar: 489
+      endSourceChar: 489
       line: 23
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 147
-      startSourceChar: 518
-      endSourceChar: 548
+      startSourceChar: 489
+      endSourceChar: 519
       line: 23
       lineChar: 8
       spanCodeSection: "resetDisplay();\r\n    }\r\n\r\n    "
     - startInstruction: 148
       endInstruction: 155
-      startSourceChar: 548
-      endSourceChar: 580
+      startSourceChar: 519
+      endSourceChar: 551
       line: 26
       lineChar: 4
       spanCodeSection: "public void resetDisplay()\r\n    "
     - startInstruction: 156
       endInstruction: 155
-      startSourceChar: 580
-      endSourceChar: 591
+      startSourceChar: 551
+      endSourceChar: 562
       line: 27
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 156
       endInstruction: 155
-      startSourceChar: 591
-      endSourceChar: 591
+      startSourceChar: 562
+      endSourceChar: 562
       line: 28
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 156
       endInstruction: 155
-      startSourceChar: 591
-      endSourceChar: 591
+      startSourceChar: 562
+      endSourceChar: 562
       line: 28
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 156
       endInstruction: 155
-      startSourceChar: 591
-      endSourceChar: 598
+      startSourceChar: 562
+      endSourceChar: 569
       line: 28
       lineChar: 8
       spanCodeSection: 'text = '
     - startInstruction: 156
       endInstruction: 175
-      startSourceChar: 598
-      endSourceChar: 620
+      startSourceChar: 569
+      endSourceChar: 591
       line: 28
       lineChar: 15
       spanCodeSection: "defaultText;\r\n        "
     - startInstruction: 176
       endInstruction: 175
-      startSourceChar: 620
-      endSourceChar: 620
+      startSourceChar: 591
+      endSourceChar: 591
       line: 29
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 176
       endInstruction: 175
-      startSourceChar: 620
-      endSourceChar: 620
+      startSourceChar: 591
+      endSourceChar: 591
       line: 29
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 176
       endInstruction: 211
-      startSourceChar: 620
-      endSourceChar: 647
+      startSourceChar: 591
+      endSourceChar: 618
       line: 29
       lineChar: 8
       spanCodeSection: "printText();\r\n    }\r\n\r\n    "
     - startInstruction: 212
       endInstruction: 219
-      startSourceChar: 647
-      endSourceChar: 676
+      startSourceChar: 618
+      endSourceChar: 647
       line: 32
       lineChar: 4
       spanCodeSection: "public void printText()\r\n    "
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 676
-      endSourceChar: 687
+      startSourceChar: 647
+      endSourceChar: 658
       line: 33
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 687
-      endSourceChar: 687
+      startSourceChar: 658
+      endSourceChar: 658
       line: 34
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 687
-      endSourceChar: 687
+      startSourceChar: 658
+      endSourceChar: 658
       line: 34
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 687
-      endSourceChar: 687
+      startSourceChar: 658
+      endSourceChar: 658
       line: 34
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 687
-      endSourceChar: 694
+      startSourceChar: 658
+      endSourceChar: 665
       line: 34
       lineChar: 8
       spanCodeSection: output.
     - startInstruction: 220
       endInstruction: 219
-      startSourceChar: 694
-      endSourceChar: 701
+      startSourceChar: 665
+      endSourceChar: 672
       line: 34
       lineChar: 15
       spanCodeSection: 'text = '
     - startInstruction: 220
       endInstruction: 263
-      startSourceChar: 701
-      endSourceChar: 721
+      startSourceChar: 672
+      endSourceChar: 692
       line: 34
       lineChar: 22
       spanCodeSection: "text;\r\n    }\r\n\r\n    "
     - startInstruction: 264
       endInstruction: 271
-      startSourceChar: 721
-      endSourceChar: 754
+      startSourceChar: 692
+      endSourceChar: 725
       line: 37
       lineChar: 4
       spanCodeSection: "public void printPassword()\r\n    "
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 754
-      endSourceChar: 857
+      startSourceChar: 725
+      endSourceChar: 828
       line: 38
       lineChar: 4
       spanCodeSection: "{\r\n        // text variable is already set to password\r\n
         \       // before calling this method\r\n        "
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 857
-      endSourceChar: 857
+      startSourceChar: 828
+      endSourceChar: 828
       line: 41
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 857
-      endSourceChar: 857
+      startSourceChar: 828
+      endSourceChar: 828
       line: 41
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 857
-      endSourceChar: 866
+      startSourceChar: 828
+      endSourceChar: 837
       line: 41
       lineChar: 8
       spanCodeSection: 'length = '
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 866
-      endSourceChar: 866
+      startSourceChar: 837
+      endSourceChar: 837
       line: 41
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 272
       endInstruction: 271
-      startSourceChar: 866
-      endSourceChar: 871
+      startSourceChar: 837
+      endSourceChar: 842
       line: 41
       lineChar: 17
       spanCodeSection: text.
     - startInstruction: 272
       endInstruction: 295
-      startSourceChar: 871
-      endSourceChar: 1048
+      startSourceChar: 842
+      endSourceChar: 1019
       line: 41
       lineChar: 22
       spanCodeSection: "Length;\r\n\r\n        // we now have the length of the password\r\n
@@ -749,148 +727,148 @@ MonoBehaviour:
         show the password AND * chars\r\n        "
     - startInstruction: 296
       endInstruction: 295
-      startSourceChar: 1048
-      endSourceChar: 1048
+      startSourceChar: 1019
+      endSourceChar: 1019
       line: 46
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 296
       endInstruction: 295
-      startSourceChar: 1048
-      endSourceChar: 1048
+      startSourceChar: 1019
+      endSourceChar: 1019
       line: 46
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 296
       endInstruction: 295
-      startSourceChar: 1048
-      endSourceChar: 1055
+      startSourceChar: 1019
+      endSourceChar: 1026
       line: 46
       lineChar: 8
       spanCodeSection: 'text = '
     - startInstruction: 296
       endInstruction: 315
-      startSourceChar: 1055
-      endSourceChar: 1070
+      startSourceChar: 1026
+      endSourceChar: 1041
       line: 46
       lineChar: 15
       spanCodeSection: "\"\";\r\n\r\n        "
     - startInstruction: 316
       endInstruction: 315
-      startSourceChar: 1070
-      endSourceChar: 1075
+      startSourceChar: 1041
+      endSourceChar: 1046
       line: 48
       lineChar: 8
       spanCodeSection: for (
     - startInstruction: 316
       endInstruction: 315
-      startSourceChar: 1075
-      endSourceChar: 1075
+      startSourceChar: 1046
+      endSourceChar: 1046
       line: 48
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 316
       endInstruction: 315
-      startSourceChar: 1075
-      endSourceChar: 1075
+      startSourceChar: 1046
+      endSourceChar: 1046
       line: 48
       lineChar: 13
       spanCodeSection: 
     - startInstruction: 316
       endInstruction: 315
-      startSourceChar: 1075
-      endSourceChar: 1081
+      startSourceChar: 1046
+      endSourceChar: 1052
       line: 48
       lineChar: 13
       spanCodeSection: 'int i '
     - startInstruction: 316
       endInstruction: 315
-      startSourceChar: 1081
-      endSourceChar: 1083
+      startSourceChar: 1052
+      endSourceChar: 1054
       line: 48
       lineChar: 19
       spanCodeSection: '= '
     - startInstruction: 316
       endInstruction: 335
-      startSourceChar: 1083
-      endSourceChar: 1086
+      startSourceChar: 1054
+      endSourceChar: 1057
       line: 48
       lineChar: 21
       spanCodeSection: '0; '
     - startInstruction: 336
       endInstruction: 335
-      startSourceChar: 1086
-      endSourceChar: 1086
+      startSourceChar: 1057
+      endSourceChar: 1057
       line: 48
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 336
       endInstruction: 335
-      startSourceChar: 1086
-      endSourceChar: 1090
+      startSourceChar: 1057
+      endSourceChar: 1061
       line: 48
       lineChar: 24
       spanCodeSection: 'i < '
     - startInstruction: 336
       endInstruction: 383
-      startSourceChar: 1090
-      endSourceChar: 1112
+      startSourceChar: 1061
+      endSourceChar: 1083
       line: 48
       lineChar: 28
       spanCodeSection: "length; i++)\r\n        "
     - startInstruction: 384
       endInstruction: 383
-      startSourceChar: 1112
-      endSourceChar: 1127
+      startSourceChar: 1083
+      endSourceChar: 1098
       line: 49
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 384
       endInstruction: 383
-      startSourceChar: 1127
-      endSourceChar: 1127
+      startSourceChar: 1098
+      endSourceChar: 1098
       line: 50
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 384
       endInstruction: 383
-      startSourceChar: 1127
-      endSourceChar: 1127
+      startSourceChar: 1098
+      endSourceChar: 1098
       line: 50
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 384
       endInstruction: 383
-      startSourceChar: 1127
-      endSourceChar: 1135
+      startSourceChar: 1098
+      endSourceChar: 1106
       line: 50
       lineChar: 12
       spanCodeSection: 'text += '
     - startInstruction: 384
       endInstruction: 519
-      startSourceChar: 1135
-      endSourceChar: 1162
+      startSourceChar: 1106
+      endSourceChar: 1133
       line: 50
       lineChar: 20
       spanCodeSection: "\"*\";\r\n        }\r\n\r\n        "
     - startInstruction: 520
       endInstruction: 519
-      startSourceChar: 1162
-      endSourceChar: 1162
+      startSourceChar: 1133
+      endSourceChar: 1133
       line: 53
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 520
       endInstruction: 519
-      startSourceChar: 1162
-      endSourceChar: 1162
+      startSourceChar: 1133
+      endSourceChar: 1133
       line: 53
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 520
       endInstruction: 520
-      startSourceChar: 1162
-      endSourceChar: 1162
+      startSourceChar: 1133
+      endSourceChar: 1133
       line: 53
       lineChar: 8
       spanCodeSection: 
@@ -898,7 +876,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11500000, guid: 7f498cd4eaf416d41ba8e48a8203ba4f, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1004,7 +983,7 @@ MonoBehaviour:
       Data: 9|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: VRC.Udon.UdonBehaviour, VRC.Udon
+      Data: Keypad_Settings, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1042,8 +1021,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: userBehaviourSource
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
