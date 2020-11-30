@@ -38,8 +38,3 @@ Udon Sharp - Make sure you install it before importing this project
 ### Credits
 Foorack for the original version (originally implemented using UdonGraph)  
 [https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/](https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/)
-
-### Enjoyed it?
-If you use it, it'd be nice if you gave credit to both me and Foorack for the work, although not explicitly required. It would also be nice to show us both your work. Have fun!
-
-<img src="https://github.com/cherryleafroad/VRChat_Keypad/blob/master/README_assets/discord.jpg" height="80px" width="80px">My Discord: **IndominableRexxx#2978**
