@@ -36,4 +36,9 @@ Udon Sharp - Make sure you install it before importing this project
 
 ### Credits
 Foorack for the original version (originally implemented using UdonGraph)  
+
+**NOTE: Foorack is NOT the author of this project on this page. If you have an issue, contact and report a bug on THIS project, not HIS.**
+
+[https://github.com/Foorack/UdonKeypad](Github Repo) 
+
 [https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/](https://blog.foorack.com/keypad-prefab-in-udon-for-vrchat/)
